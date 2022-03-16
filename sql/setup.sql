@@ -7,3 +7,8 @@ CREATE TABLE profiles (
     name TEXT NOT NULL,
     bio TEXT NOT NULL
 );
+
+INSERT INTO
+    profiles (name, bio)
+VALUES
+    ('james', 'king of cats');
