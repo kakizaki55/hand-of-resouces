@@ -11,4 +11,12 @@ describe('hand-of-resources routes', () => {
   afterAll(() => {
     pool.end();
   });
+  it('creates a profile object', async () => {
+    const expected = {
+      name: 'forest',
+      bio: 'lots of trees, color enthusiast',
+    };
+    const response = await request(app).post('/api/v1/profiles').send(expected);
+    expect(response.body).toEqual({ id: expect.any(String), ...expected });
+  });
 });
