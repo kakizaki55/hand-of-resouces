@@ -27,4 +27,10 @@ describe('hand-of-resources routes', () => {
     const { body } = await request(app).get('/api/v1/profiles');
     expect(body).toEqual(expected);
   });
+
+  it('get a profile based on a id', async () => {
+    const expected = await Profile.findById(1);
+    const { body } = await request(app).get(`/api/v1/profiles/${expected.id}`);
+    expect(expected).toEqual(body);
+  });
 });
