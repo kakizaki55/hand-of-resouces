@@ -34,7 +34,7 @@ describe('hand-of-resources routes', () => {
     expect(expected).toEqual(body);
   });
 
-  it.only('update the tea by the id', async () => {
+  it('update the tea by the id', async () => {
     const expected = {
       id: expect.any(String),
       name: 'mint-tea',
