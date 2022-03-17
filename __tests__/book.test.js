@@ -13,7 +13,7 @@ describe('hand-of-resources routes', () => {
     pool.end();
   });
 
-  it.only('creates a book object', async () => {
+  it('creates a book object', async () => {
     const expected = {
       author: 'ian',
       title: 'movie monster origin stories',
@@ -22,7 +22,7 @@ describe('hand-of-resources routes', () => {
     expect(body).toEqual({ id: expect.any(String), ...expected });
   });
 
-  it('get and array full  of all the books', async () => {
+  it.only('get and array full  of all the books', async () => {
     const expected = await Book.getAll();
     const { body } = await request(app).get('/api/v1/books');
     expect(body).toEqual(expected);
