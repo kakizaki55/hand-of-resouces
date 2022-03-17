@@ -13,7 +13,7 @@ describe('hand-of-resources routes', () => {
     pool.end();
   });
 
-  it.only('creates a tea object', async () => {
+  it('creates a tea object', async () => {
     const expected = {
       name: 'ban-cha',
       origin: 'japan',
@@ -28,7 +28,7 @@ describe('hand-of-resources routes', () => {
     expect(body).toEqual(expected);
   });
 
-  it('get a tea based on a id', async () => {
+  it.only('get a tea based on a id', async () => {
     const expected = await Tea.findById(1);
     const { body } = await request(app).get(`/api/v1/teas/${expected.id}`);
     expect(expected).toEqual(body);
