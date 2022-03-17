@@ -34,7 +34,7 @@ describe('hand-of-resources routes', () => {
     expect(expected).toEqual(body);
   });
 
-  it('update the tea by the id', async () => {
+  it.only('update the tea by the id', async () => {
     const expected = {
       id: expect.any(String),
       name: 'mint-tea',
@@ -52,7 +52,7 @@ describe('hand-of-resources routes', () => {
     const { body } = await request(app).delete(`/api/v1/teas/${expected.id}`);
     expect(expected).toEqual(body);
   });
-  it.only('return 404 for not found', async () => {
+  it('return 404 for not found', async () => {
     const response = await request(app).get('/api/v1/teas/1234');
 
     expect(response.status).toEqual(404);
