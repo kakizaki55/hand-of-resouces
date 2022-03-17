@@ -2,7 +2,8 @@
 -- The SQL in this file will be executed when you run `npm run setup-db`
 DROP TABLE IF EXISTS profiles,
 books,
-teas;
+teas,
+colors;
 
 --Profiles table
 CREATE TABLE profiles (
@@ -44,3 +45,16 @@ INSERT INTO
 VALUES
     ('Earlgrey', 'England'),
     ('Greentea', 'Japan');
+
+--Colors table
+CREATE TABLE colors(
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    name TEXT NOT NULL,
+    vibe TEXT NOT NULL
+);
+
+INSERT INTO
+    colors(name, vibe)
+VALUES
+    ('red', 'warm'),
+    ('seaform', 'light');
