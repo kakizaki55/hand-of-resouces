@@ -22,7 +22,7 @@ describe('hand-of-resources routes', () => {
     expect(body).toEqual({ id: expect.any(String), ...expected });
   });
 
-  it.only('get and array full  of all the books', async () => {
+  it('get and array full  of all the books', async () => {
     const expected = await Book.getAll();
     const { body } = await request(app).get('/api/v1/books');
     expect(body).toEqual(expected);
