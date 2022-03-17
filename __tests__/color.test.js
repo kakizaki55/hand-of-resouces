@@ -12,7 +12,7 @@ describe('hand of resource routes', () => {
     pool.end();
   });
 
-  it.only('creates a new color object ', async () => {
+  it('creates a new color object ', async () => {
     const expected = {
       name: 'blue',
       vibe: 'cool',
