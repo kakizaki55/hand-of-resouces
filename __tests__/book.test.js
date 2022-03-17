@@ -38,11 +38,11 @@ describe('hand-of-resources routes', () => {
     const expected = {
       id: expect.any(String),
       author: 'michelle',
-      title: 'how to bug emma, a field guid',
+      title: 'how to bug emma, a field guide',
     };
     const { body } = await request(app).patch('/api/v1/books/1').send({
       author: 'michelle',
-      title: 'how to bug emma, a field guid',
+      title: 'how to bug emma, a field guide',
     });
     expect(body).toEqual(expected);
   });
