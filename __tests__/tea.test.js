@@ -13,7 +13,7 @@ describe('hand-of-resources routes', () => {
     pool.end();
   });
 
-  it('creates a tea object', async () => {
+  it.only('creates a tea object', async () => {
     const expected = {
       name: 'ban-cha',
       origin: 'japan',

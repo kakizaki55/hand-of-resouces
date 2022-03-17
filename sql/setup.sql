@@ -1,7 +1,8 @@
 -- Use this file to define your SQL tables
 -- The SQL in this file will be executed when you run `npm run setup-db`
 DROP TABLE IF EXISTS profiles,
-books;
+books,
+teas;
 
 --Profiles table
 CREATE TABLE profiles (
@@ -32,14 +33,14 @@ VALUES
     ('kurt Vonegget', 'sirans of titan');
 
 --Tea table
-CREATE TABLE tea (
+CREATE TABLE teas (
     id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
     name TEXT NOT NULL,
     origin TEXT NOT NULL
 );
 
 INSERT INTO
-    tea (name, origin)
+    teas (name, origin)
 VALUES
     ('Earlgrey', 'England'),
     ('Greentea', 'Japan');
