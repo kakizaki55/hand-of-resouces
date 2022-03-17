@@ -28,7 +28,7 @@ describe('hand-of-resources routes', () => {
     expect(body).toEqual(expected);
   });
 
-  it.only('get a tea based on a id', async () => {
+  it('get a tea based on a id', async () => {
     const expected = await Tea.findById(1);
     const { body } = await request(app).get(`/api/v1/teas/${expected.id}`);
     expect(expected).toEqual(body);
@@ -51,5 +51,10 @@ describe('hand-of-resources routes', () => {
     const expected = await Tea.findById(1);
     const { body } = await request(app).delete(`/api/v1/teas/${expected.id}`);
     expect(expected).toEqual(body);
+  });
+  it.only('return 404 for not found', async () => {
+    const response = await request(app).get('/api/v1/teas/1234');
+
+    expect(response.status).toEqual(404);
   });
 });
