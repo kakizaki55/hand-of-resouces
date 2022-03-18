@@ -3,7 +3,8 @@
 DROP TABLE IF EXISTS profiles,
 books,
 teas,
-colors;
+colors,
+trees;
 
 --Profiles table
 CREATE TABLE profiles (
@@ -58,3 +59,16 @@ INSERT INTO
 VALUES
     ('red', 'warm'),
     ('seaform', 'light');
+
+--Trees 
+CREATE TABLE trees(
+    id BIGINT GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+    name TEXT NOT NULL,
+    region TEXT NOT NULL
+);
+
+INSERT INTO
+    trees(name, region)
+VALUES
+    ('seqoia', 'california'),
+    ('ginko', 'japan');
