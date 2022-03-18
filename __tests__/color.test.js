@@ -33,7 +33,6 @@ describe('hand of resource routes', () => {
 
   it('update the color by the id', async () => {
     const expected = {
-      id: expect.any(String),
       name: 'pink',
       vibe: 'fun',
     };
@@ -41,7 +40,7 @@ describe('hand of resource routes', () => {
       name: 'pink',
       vibe: 'fun',
     });
-    expect(body).toEqual(expected);
+    expect(body).toEqual({ ...expected, id: expect.any(String) });
   });
 
   it('it deletes color by id', async () => {
